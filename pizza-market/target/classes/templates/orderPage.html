@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: template (~{:: #order-content})}">
+<section id="order-content">
+    <div class="container">
+        <h1>Zamówienie</h1>
+        <div>
+            <h3 th:text="${pizza.name}"></h3>
+            <p th:text="${pizza.ingredients}"></p>
+            <p th:text="|${pizza.price}|zł"></p>
+        </div>
+        <form method="post" th:object="${orderAddress}">
+            <div>
+                <input th:field="*{firstName}" type="text" placeholder="Imię" class="input">
+            </div>
+            <div>
+                <input th:field="*{lastName} type="text" placeholder="Nazwisko" class="input">
+            </div>
+            <div>
+                <input th:field="*{street} type="text" placeholder="Ulica" class="input">
+            </div>
+            <div>
+                <input th:field="*{postalCode} type="text" placeholder="Kod pocztowy" class="input">
+            </div>
+            <div>
+                <input th:field="*{city} type="text" placeholder="Miasto" class="input">
+            </div>
+            <div>
+                <button class="btn">Zamów</button>
+            </div>
+        </form>
+    </div>
+</section>
+</html>

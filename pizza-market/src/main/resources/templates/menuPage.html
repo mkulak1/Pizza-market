@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: template (~{:: #menu-content})}">
+  <section id="menu-content">
+    <div class="container">
+      <h1>Menu</h1>
+      <table style="width: 100%">
+        <tr th:each="pizza : ${pizzas}">
+          <td>
+            <h3 th:text="${pizza.name}"></h3>
+            <p th:text="${pizza.ingredients}">Sos pomidorowy, ser mozzarella</p>
+          </td>
+          <td style="text-align: right">
+            <h3 th:text="|${pizza.price}zł|">20.00zł</h3>
+            <a th:href="@{/order/{pizzaId}(pizzaId=${pizza.id})}" class="btn btn-sm">Zamów</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</html>

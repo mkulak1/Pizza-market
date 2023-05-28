@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: template (~{:: #home-page-section})}">
+
+    <section id="home-page-section">
+        <div class="container">
+            <div>
+                <img th:src="@{/img/hero-home.jpg}" alt="Pizza" style="width: 100%; height: 300px; object-fit: cover">
+            </div>
+            <div style="text-align: center">
+                <h2 style="font-size: 2em">Pizza neapolitańska</h2>
+                <p style="font-weight: 200">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid amet fugiat impedit ipsum quae repellendus sequi similique veniam! At aut explicabo illo nihil, odio recusandae saepe? At, consequatur corporis dignissimos et id in iusto maxime odit, pariatur possimus, praesentium quas quod sit sunt suscipit! Atque laudantium neque non velit veniam.</p>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: center">
+                <a class="btn" href="">Sprawdź nasze menu</a>
+            </div>
+        </div>
+    </section>
+</html>
